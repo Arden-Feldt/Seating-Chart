@@ -7,6 +7,7 @@ public class Grade {
     HashSet<Student> students;
     public Grade(String path){
         ReadStudentResponses readStudentResponses = new ReadStudentResponses(path);
+        readStudentResponses.knitStudents();
         students = new HashSet<>(readStudentResponses.getStudents());
     }
 }

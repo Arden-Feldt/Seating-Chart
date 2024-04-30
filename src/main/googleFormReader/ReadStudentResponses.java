@@ -65,7 +65,7 @@ public class ReadStudentResponses {
                 return student;
             }
         }
-        return null;
+        return new Student("UH OH");
     }
 
     public HashSet<Student> getStudents() {
