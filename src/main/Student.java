@@ -51,6 +51,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "\nID: " + id + "\nF1: " + oneFriend + "\nF2: " + twoFriend + "\nF3: " + threeFriend;
+        return "\nID: " + id + "\nF1: " + oneFriend.id + "\nF2: " + twoFriend.id + "\nF3: " + threeFriend.id;
     }
 }
