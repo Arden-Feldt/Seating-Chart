@@ -2,9 +2,9 @@ package src.main;
 
 public class Student {
     private final String id;
-    private String oneFriend;
-    private String twoFriend;
-    private String threeFriend;
+    private Student oneFriend;
+    private Student twoFriend;
+    private Student threeFriend;
 
     public Student(String id){
         this.id = id;
@@ -12,7 +12,7 @@ public class Student {
         this.twoFriend = null;
         this.threeFriend = null;
     }
-    public Student(String id, String oneFriend, String twoStudent, String threeStudent){
+    public Student(String id, Student oneFriend, Student twoStudent, Student threeStudent){
         this.id = id;
         this.oneFriend = oneFriend;
         this.twoFriend = twoStudent;
@@ -23,27 +23,27 @@ public class Student {
         return id;
     }
 
-    public String getOneFriend() {
+    public Student getOneFriend() {
         return oneFriend;
     }
 
-    public String getTwoFriend() {
+    public Student getTwoFriend() {
         return twoFriend;
     }
 
-    public String getThreeFriend() {
+    public Student getThreeFriend() {
         return threeFriend;
     }
 
-    public void setOneFriend(String oneFriend) {
+    public void setOneFriend(Student oneFriend) {
         this.oneFriend = oneFriend;
     }
 
-    public void setTwoFriend(String twoFriend) {
+    public void setTwoFriend(Student twoFriend) {
         this.twoFriend = twoFriend;
     }
 
-    public void setThreeFriend(String threeFriend) {
+    public void setThreeFriend(Student threeFriend) {
         this.threeFriend = threeFriend;
     }
 }
