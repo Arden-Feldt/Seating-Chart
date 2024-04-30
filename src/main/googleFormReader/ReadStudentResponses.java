@@ -7,13 +7,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 
 public class ReadStudentResponses {
-    ArrayList<Student> students;
+    HashSet<Student> students;
     HashMap<String, ArrayList<String>> friends;
     public ReadStudentResponses(String path) {
-        this.students = new ArrayList<>();
+        this.students = new HashSet<>();
         this.friends = new HashMap<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
@@ -38,7 +39,36 @@ public class ReadStudentResponses {
         }
     }
 
-    public ArrayList<Student> getStudents() {
+    public void knitStudents() {
+        // Adds friends to existing students
+        for (Student student : students) {
+            // Retrieve the friend's ID from the friend list
+            String oneFriendId = friends.get(student.getId()).get(0);
+            String twoFriendId = friends.get(student.getId()).get(0);
+            String threeFriendId = friends.get(student.getId()).get(0);
+
+            // Find the corresponding Student object with the friend's ID
+            Student oneFriend = findStudentById(oneFriendId);
+            Student twoFriend = findStudentById(twoFriendId);
+            Student threeFriend = findStudentById(threeFriendId);
+
+            // Set oneFriend for the current student
+            student.setOneFriend(oneFriend);
+            student.setTwoFriend(twoFriend);
+            student.setThreeFriend(threeFriend);
+        }
+    }
+
+    private Student findStudentById(String id) {
+        for (Student student : students) {
+            if (student.getId().equals(id)) {
+                return student;
+            }
+        }
+        return null; // Handle the case when student with the given ID is not found
+    }
+
+    public HashSet<Student> getStudents() {
         return students;
     }
 

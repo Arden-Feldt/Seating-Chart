@@ -9,8 +9,4 @@ public class Class {
         ReadStudentResponses readStudentResponses = new ReadStudentResponses(path);
         students = new HashSet<>(readStudentResponses.getStudents());
     }
-
-    private void knitStudents(){
-        // Adds friends to existing students
-    }
 }

@@ -1,5 +1,7 @@
 package src.main;
 
+import java.util.ArrayList;
+
 public class Student {
     private final String id;
     private Student oneFriend;
