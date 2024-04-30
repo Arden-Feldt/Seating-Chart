@@ -24,23 +24,11 @@ public class readStudent {
             while ((line = br.readLine()) != null) {
                 String[] ids = line.split(",");
 
-                Student student = new Student(ids[0]);
+                Student student = new Student(ids[0], ids[1], ids[2], ids[3]);
                 students.add(student);
-
-                oneFriends.add(ids[1]);
-                twoFriends.add(ids[2]);
-                threeFriends.add(ids[3]);
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    public void knitStudents(){
-        for (int i = 0; i < students.size(); i ++){
-            students.get(i).setOneFriend(oneFriends.get(i));
-            students.get(i).setTwoFriend(twoFriends.get(i));
-            students.get(i).setThreeFriend(threeFriends.get(i));
         }
     }
 

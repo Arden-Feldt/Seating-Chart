@@ -1,7 +1,7 @@
 package src.main;
 
 public class Student {
-    private String id;
+    private final String id;
     private String oneFriend;
     private String twoFriend;
     private String threeFriend;
