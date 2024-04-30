@@ -48,4 +48,9 @@ public class Student {
     public void setThreeFriend(Student threeFriend) {
         this.threeFriend = threeFriend;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + id;
+    }
 }

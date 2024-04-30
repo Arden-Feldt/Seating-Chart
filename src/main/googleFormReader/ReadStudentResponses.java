@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.NoSuchElementException;
 
 
 public class ReadStudentResponses {
@@ -65,7 +66,7 @@ public class ReadStudentResponses {
                 return student;
             }
         }
-        return null; // Handle the case when student with the given ID is not found
+        return null;
     }
 
     public HashSet<Student> getStudents() {
