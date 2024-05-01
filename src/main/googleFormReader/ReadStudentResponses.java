@@ -44,8 +44,8 @@ public class ReadStudentResponses {
         for (Student student : students) {
             // Retrieve the friend's ID from the friend list
             String oneFriendId = friends.get(student.getId()).get(0);
-            String twoFriendId = friends.get(student.getId()).get(0);
-            String threeFriendId = friends.get(student.getId()).get(0);
+            String twoFriendId = friends.get(student.getId()).get(1);
+            String threeFriendId = friends.get(student.getId()).get(2);
 
             // Find the corresponding Student object with the friend's ID
             Student oneFriend = findStudentById(oneFriendId);
