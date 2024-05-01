@@ -10,4 +10,8 @@ public class Grade {
         readStudentResponses.knitStudents();
         students = new HashSet<>(readStudentResponses.getStudents());
     }
+
+    public HashSet<Student> getStudents() {
+        return students;
+    }
 }
