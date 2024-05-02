@@ -6,21 +6,23 @@ import src.main.googleFormReader.PathLocator;
 import src.main.googleFormReader.ReadStudentResponses;
 
 public class Grade {
-    HashSet<Student> students;
-    public Grade(){
-        PathLocator pathLocator = new PathLocator();
+  HashSet<Student> students;
 
-        // Remove this after UI implementation
-        pathLocator.setPath("C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\googleFormReader\\studentForm");
+  public Grade() {
+    PathLocator pathLocator = new PathLocator();
 
-        String path = pathLocator.getPath();
+    // Remove this after UI implementation
+    pathLocator.setPath(
+        "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\googleFormReader\\studentForm");
 
-        ReadStudentResponses readStudentResponses = new ReadStudentResponses(path);
-        readStudentResponses.knitStudents();
-        students = new HashSet<>(readStudentResponses.getStudents());
-    }
+    String path = pathLocator.getPath();
 
-    public HashSet<Student> getStudents() {
-        return students;
-    }
+    ReadStudentResponses readStudentResponses = new ReadStudentResponses(path);
+    readStudentResponses.knitStudents();
+    students = new HashSet<>(readStudentResponses.getStudents());
+  }
+
+  public HashSet<Student> getStudents() {
+    return students;
+  }
 }
