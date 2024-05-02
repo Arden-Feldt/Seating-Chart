@@ -2,6 +2,7 @@ package src.main.googleFormReader;
 
 
 import src.main.Student;
+import src.main.exceptions.StudentNotFoundException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -63,9 +64,12 @@ public class ReadStudentResponses {
         for (Student student : students) {
             if (student.getId().equals(id)) {
                 return student;
+            } else if (student.getId().isEmpty()) {
+                return new Student("");
             }
         }
-        return new Student("UH OH");
+        return new Student("We shouldn't get here");
+        // throw new StudentNotFoundException();
     }
 
     public HashSet<Student> getStudents() {
