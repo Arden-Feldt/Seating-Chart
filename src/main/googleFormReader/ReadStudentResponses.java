@@ -1,5 +1,6 @@
 package src.main.googleFormReader;
 
+
 import src.main.Student;
 
 import java.io.BufferedReader;
@@ -8,6 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+
+import static src.main.Main.FRIENDNUMBER;
 
 
 public class ReadStudentResponses {
@@ -27,10 +30,7 @@ public class ReadStudentResponses {
                 students.add(student);
 
                 // Build body for friends
-                ArrayList<String> friendList = new ArrayList<>();
-                friendList.add(ids[1]);
-                friendList.add(ids[2]);
-                friendList.add(ids[3]);
+                ArrayList<String> friendList = addFriendsToList(ids);
 
                 friends.put(student.getId(), friendList);
             }
@@ -74,5 +74,24 @@ public class ReadStudentResponses {
 
     public HashMap<String, ArrayList<String>> getFriends() {
         return friends;
+    }
+
+    private String checkFriend(String id){
+        if (id == null){
+            return "";
+        }
+        return id;
+    }
+
+    public ArrayList<String> addFriendsToList(String[] ids){
+        ArrayList<String> friendList = new ArrayList<>();
+        for (int i = 1; i <= FRIENDNUMBER; i ++){
+            try {
+                friendList.add(ids[i]);
+            } catch (ArrayIndexOutOfBoundsException e){
+                friendList.add("");
+            }
+        }
+        return friendList;
     }
 }
