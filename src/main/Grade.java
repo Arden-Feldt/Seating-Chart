@@ -27,9 +27,9 @@ public class Grade {
     addIDs();
   }
 
-  public void addIDs(){
+  public void addIDs() {
     int i = 0;
-    for (Student student: students){
+    for (Student student : students) {
       student.setId(i);
       i++;
     }
