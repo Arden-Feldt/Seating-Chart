@@ -1,29 +1,37 @@
 package src.main;
 
-import java.util.ArrayList;
-
 public class Student {
-  private final String id;
+  private int id;
+
+  private final String name;
   private Student oneFriend;
   private Student twoFriend;
   private Student threeFriend;
 
-  public Student(String id) {
-    this.id = id;
+  public Student(String name) {
+    this.name = name;
     this.oneFriend = null;
     this.twoFriend = null;
     this.threeFriend = null;
   }
 
-  public Student(String id, Student oneFriend, Student twoStudent, Student threeStudent) {
-    this.id = id;
+  public Student(String name, Student oneFriend, Student twoStudent, Student threeStudent) {
+    this.name = name;
     this.oneFriend = oneFriend;
     this.twoFriend = twoStudent;
     this.threeFriend = threeStudent;
   }
 
-  public String getId() {
+  public int getId() {
     return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
   }
 
   public Student getOneFriend() {
@@ -53,12 +61,12 @@ public class Student {
   @Override
   public String toString() {
     return "\nID: "
-        + id
+        + name
         + "\nF1: "
-        + oneFriend.id
+        + oneFriend.name
         + "\nF2: "
-        + twoFriend.id
+        + twoFriend.name
         + "\nF3: "
-        + threeFriend.id;
+        + threeFriend.name;
   }
 }

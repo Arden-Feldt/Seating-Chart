@@ -1,7 +1,7 @@
 package src.main.googleFormReader;
 
 import src.main.Student;
-import src.main.exceptions.StudentNotFoundException;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class ReadStudentResponses {
         // Build body for friends
         ArrayList<String> friendList = addFriendsToList(ids);
 
-        friends.put(student.getId(), friendList);
+        friends.put(student.getName(), friendList);
       }
     } catch (IOException e) {
       e.printStackTrace();
@@ -41,14 +41,14 @@ public class ReadStudentResponses {
     // Adds friends to existing students
     for (Student student : students) {
       // Retrieve the friend's ID from the friend list
-      String oneFriendId = friends.get(student.getId()).get(0);
-      String twoFriendId = friends.get(student.getId()).get(1);
-      String threeFriendId = friends.get(student.getId()).get(2);
+      String oneFriendId = friends.get(student.getName()).get(0);
+      String twoFriendId = friends.get(student.getName()).get(1);
+      String threeFriendId = friends.get(student.getName()).get(2);
 
       // Find the corresponding Student object with the friend's ID
-      Student oneFriend = findStudentById(oneFriendId);
-      Student twoFriend = findStudentById(twoFriendId);
-      Student threeFriend = findStudentById(threeFriendId);
+      Student oneFriend = findStudentByName(oneFriendId);
+      Student twoFriend = findStudentByName(twoFriendId);
+      Student threeFriend = findStudentByName(threeFriendId);
 
       // Set oneFriend for the current student
       student.setOneFriend(oneFriend);
@@ -57,11 +57,11 @@ public class ReadStudentResponses {
     }
   }
 
-  private Student findStudentById(String id) {
+  private Student findStudentByName(String name) {
     for (Student student : students) {
-      if (student.getId().equals(id)) {
+      if (student.getName().equals(name)) {
         return student;
-      } else if (student.getId().isEmpty()) {
+      } else if (student.getName().isEmpty()) {
         return new Student("");
       }
     }

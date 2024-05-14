@@ -22,6 +22,14 @@ public class Grade {
     students = new HashSet<>(readStudentResponses.getStudents());
   }
 
+  public void addIDs(){
+    int i = 0;
+    for (Student student: students){
+      student.setId(i);
+      i++;
+    }
+  }
+
   public HashSet<Student> getStudents() {
     return students;
   }
