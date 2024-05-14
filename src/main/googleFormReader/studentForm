@@ -1,10 +1,10 @@
 John,Jill,Nate,Murry,
 Jill,Bill,Sriya,Kyle,
 Nate,John,Ken,Shannon,
-Ken,Vivian,Steve
+Ken,Vivian,Steve, Nate
 Steve,Kyle,Shannon,Bill,
 Bill,Sriya,John,Jill,
-Sriya,Kyle,Nate
+Sriya,Kyle,Nate, Murry
 Shannon,Nate,Jill,Vivian,
 Kyle,Ken,John,Nate,
 Vivian,Bill,Steve,Shannon
