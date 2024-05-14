@@ -1,5 +1,6 @@
 package src.main;
 
+import src.main.miniZinc.DznWriter;
 import src.main.miniZinc.StudentTransformer;
 
 public class Main {
@@ -22,5 +23,9 @@ public class Main {
     // Mini Zinc Shit has to go here
     StudentTransformer studentTransformer = new StudentTransformer(grade);
     System.out.println(studentTransformer);
+
+    // Write into datafile
+    DznWriter dznWriter = new DznWriter(grade);
+
   }
 }
