@@ -8,7 +8,6 @@ import java.util.List;
 public class DznReader {
     public DznReader(){
         // Will read in the solution and make it pretty, currently just copies what DznWriter put down
-
         String filePath = "src/main/miniZinc/seatingdata.dzn";
 
         try {
