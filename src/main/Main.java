@@ -1,5 +1,7 @@
 package src.main;
 
+import src.main.miniZinc.StudentTransformer;
+
 public class Main {
 
   public static int TABLENUMBER;
@@ -14,8 +16,10 @@ public class Main {
     Grade grade = new Grade();
 
     // Checking it all works
-    System.out.println(grade.getStudents());
+    // System.out.println(grade.getStudents());
 
     // Mini Zinc Shit has to go here
+    StudentTransformer studentTransformer = new StudentTransformer(grade);
+    System.out.println(studentTransformer.friendArray());
   }
 }

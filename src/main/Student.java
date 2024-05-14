@@ -60,7 +60,7 @@ public class Student {
 
   @Override
   public String toString() {
-    return "\nID: "
+    return "\nName: "
         + name
         + "\nF1: "
         + oneFriend.name

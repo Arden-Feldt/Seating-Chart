@@ -17,9 +17,14 @@ public class Grade {
 
     String path = pathLocator.getPath();
 
+    // Read in all the student responses
     ReadStudentResponses readStudentResponses = new ReadStudentResponses(path);
+    // Associate students with their friends
     readStudentResponses.knitStudents();
+
     students = new HashSet<>(readStudentResponses.getStudents());
+    // Give each student a unique identifier
+    addIDs();
   }
 
   public void addIDs(){
