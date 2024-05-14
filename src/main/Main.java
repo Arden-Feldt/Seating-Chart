@@ -21,6 +21,6 @@ public class Main {
 
     // Mini Zinc Shit has to go here
     StudentTransformer studentTransformer = new StudentTransformer(grade);
-    System.out.println(studentTransformer.friendArray());
+    System.out.println(studentTransformer);
   }
 }

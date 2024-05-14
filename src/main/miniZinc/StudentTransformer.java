@@ -23,7 +23,7 @@ public class StudentTransformer {
     return result;
   }
 
-  public String friendArray() {
+  public int[][] friendArray() {
     int[][] result = new int[grade.getStudents().size()][3];
     int i = 0;
     for (Student student : grade.getStudents()) {
@@ -32,6 +32,27 @@ public class StudentTransformer {
       result[i][2] = (student.getThreeFriend().getId());
       i++;
     }
-    return Arrays.deepToString(result);
+    return result;
+  }
+
+  @Override
+  public String toString() {
+    int[][] array = friendArray();
+    StringBuilder result = new StringBuilder();
+
+    result.append("friends = array2d(1.." + grade.getStudents().size() + ", 1..3, [\n");
+
+    for (int i = 0; i < array.length; i++){
+      for (int j = 0; j < array[i].length; j++){
+        result.append(array[i][j]);
+        if (i != array.length - 1 || j != array[i].length - 1){
+          result.append(", ");
+        }
+      }
+      result.append("\n");
+    }
+    result.append("]);");
+
+    return result.toString();
   }
 }
