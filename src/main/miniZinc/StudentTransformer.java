@@ -40,7 +40,8 @@ public class StudentTransformer {
     int[][] array = friendArray();
     StringBuilder result = new StringBuilder();
 
-    result.append("friends = array2d(1.." + grade.getStudents().size() + ", 1..3, [\n");
+    result.append("n = ").append(grade.getStudents().size()).append(";\n");
+    result.append("friends = array2d(1..").append(grade.getStudents().size()).append(", 1..3, [\n");
 
     for (int i = 0; i < array.length; i++){
       for (int j = 0; j < array[i].length; j++){
