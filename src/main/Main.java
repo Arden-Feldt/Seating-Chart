@@ -27,5 +27,8 @@ public class Main {
     // Write into datafile
     DznWriter dznWriter = new DznWriter(grade);
 
+    // cd .\src\main\miniZinc\
+    // minizinc --solver gecode --time-limit 10 seatingchart.mzn seatingdata.dzn
+    // --time-limit is in milliseconds
   }
 }
