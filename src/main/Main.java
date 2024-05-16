@@ -19,7 +19,6 @@ public class Main {
     // Checking it all works
     System.out.println(grade.getStudents());
 
-
     // Mini Zinc Shit has to go here
     StudentTransformer studentTransformer = new StudentTransformer(grade);
     System.out.println(studentTransformer);
