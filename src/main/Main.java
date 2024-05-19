@@ -6,15 +6,12 @@ import src.main.miniZinc.StudentTransformer;
 
 public class Main {
 
-  public static int TABLENUMBER;
-  public static int FRIENDNUMBER;
-  public static int SEATNUMBER;
+  public static int TABLENUMBER = 100; // Max number of tables available;
+  public static final int FRIENDNUMBER = 3; // DO NOT FUCK WITH - How many friends each student has
+  public static int SEATNUMBER = 8; // Number of seats at a table;
+  public static int TIMESTOP = 1000; // Time stop is in milliseconds;
 
   public static void main(String[] args) {
-    TABLENUMBER = 100;
-    FRIENDNUMBER = 3;
-    SEATNUMBER = 8;
-
     Grade grade = new Grade();
 
     // Checking it all works
@@ -29,11 +26,9 @@ public class Main {
     dznWriter.write();
 
     // Execute optimization
-    MiniZincExecutor miniZincExecutor = new MiniZincExecutor(1000);
+    MiniZincExecutor miniZincExecutor = new MiniZincExecutor(TIMESTOP);
     miniZincExecutor.execute();
 
-    // cd .\src\main\miniZinc\
-    // minizinc --solver gecode --time-limit 10 seatingchart.mzn seatingdata.dzn
-    // --time-limit is in milliseconds
+
   }
 }

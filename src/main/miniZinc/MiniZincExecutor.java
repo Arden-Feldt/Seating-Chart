@@ -7,21 +7,23 @@ public class MiniZincExecutor {
     String[] command;
     public MiniZincExecutor(int timestop) {
     // Define the command and its arguments
-        command = new String[]{
+    command =
+        new String[] {
           "minizinc",
           "--solver",
           "gecode",
           "--time-limit",
           String.valueOf(timestop),
-          // TODO: Fix this absolute path
-          "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\miniZinc\\seatingchart.mzn",
-          "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\miniZinc\\seatingdata.dzn"
+          "\"src/main/miniZinc/seatingchart.mzn\"",
+          "\"src/main/miniZinc/seatingdata.dzn\""
         };
-
-
     }
 
     public void execute(){
+        // What this code is basically doing
+        // minizinc --solver gecode --time-limit 10 seatingchart.mzn seatingdata.dzn
+        // --time-limit is in milliseconds
+
         try {
             // Create a ProcessBuilder with the command
             ProcessBuilder processBuilder = new ProcessBuilder(command);
