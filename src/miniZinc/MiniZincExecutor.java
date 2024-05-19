@@ -1,4 +1,4 @@
-package src.main.miniZinc;
+package src.miniZinc;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

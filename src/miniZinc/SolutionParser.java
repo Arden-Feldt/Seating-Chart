@@ -1,6 +1,6 @@
-package src.main.miniZinc;
+package src.miniZinc;
 
-import src.main.Grade;
+import src.Grade;
 
 public class SolutionParser {
     String solution;

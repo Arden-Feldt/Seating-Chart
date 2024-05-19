@@ -1,10 +1,10 @@
-package src.main;
+package src;
 
-import src.main.miniZinc.DznWriter;
-import src.main.miniZinc.MiniZincExecutor;
-import src.main.miniZinc.SolutionParser;
-import src.main.miniZinc.StudentTransformer;
-import src.main.teacherInput.TeacherInputReader;
+import src.miniZinc.DznWriter;
+import src.miniZinc.MiniZincExecutor;
+import src.miniZinc.SolutionParser;
+import src.miniZinc.StudentTransformer;
+import src.teacherInput.TeacherInputReader;
 
 public class Main {
 
@@ -31,7 +31,7 @@ public class Main {
     System.out.println(studentTransformer);
 
     // Write into datafile
-    DznWriter dznWriter = new DznWriter(grade, "src/main/miniZinc/seatingdata.dzn");
+    DznWriter dznWriter = new DznWriter(grade, "src/miniZinc/seatingdata.dzn");
     dznWriter.write();
 
     // Execute optimization

@@ -1,9 +1,9 @@
-package src.main;
+package src;
 
 import java.util.HashSet;
 
-import src.main.googleFormReader.PathLocator;
-import src.main.googleFormReader.StudentResponseReader;
+import src.googleFormReader.StudentResponseReader;
+import src.googleFormReader.PathLocator;
 
 public class Grade {
   HashSet<Student> students;

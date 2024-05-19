@@ -1,4 +1,4 @@
-package src.main.exceptions;
+package src.exceptions;
 
 import java.util.NoSuchElementException;
 

@@ -1,6 +1,6 @@
-package src.main.googleFormReader;
+package src.googleFormReader;
 
-import src.main.Student;
+import src.Student;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import static src.main.Main.FRIENDNUMBER;
+import static src.Main.FRIENDNUMBER;
 
 public class StudentResponseReader {
   HashSet<Student> students;

@@ -1,4 +1,4 @@
-package src.main.googleFormReader;
+package src.googleFormReader;
 
 import java.io.File;
 import java.io.IOException;

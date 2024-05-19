@@ -1,9 +1,7 @@
-package src.main.miniZinc;
+package src.miniZinc;
 
-import src.main.Grade;
-import src.main.Student;
-
-import java.util.Arrays;
+import src.Grade;
+import src.Student;
 
 public class StudentTransformer {
 

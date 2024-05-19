@@ -1,4 +1,4 @@
-package src.main.teacherInput;
+package src.teacherInput;
 
 public class TeacherInputReader {
     // TODO: Implement this
