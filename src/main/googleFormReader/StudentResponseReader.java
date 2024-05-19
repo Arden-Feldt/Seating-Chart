@@ -10,11 +10,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import static src.main.Main.FRIENDNUMBER;
 
-public class ReadStudentResponses {
+public class StudentResponseReader {
   HashSet<Student> students;
   HashMap<String, ArrayList<String>> friends;
 
-  public ReadStudentResponses(String path) {
+  public StudentResponseReader(String path) {
     this.students = new HashSet<>();
     this.friends = new HashMap<>();
 

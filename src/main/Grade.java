@@ -3,7 +3,7 @@ package src.main;
 import java.util.HashSet;
 
 import src.main.googleFormReader.PathLocator;
-import src.main.googleFormReader.ReadStudentResponses;
+import src.main.googleFormReader.StudentResponseReader;
 
 public class Grade {
   HashSet<Student> students;
@@ -18,11 +18,11 @@ public class Grade {
     String path = pathLocator.getPath();
 
     // Read in all the student responses
-    ReadStudentResponses readStudentResponses = new ReadStudentResponses(path);
+    StudentResponseReader studentResponseReader = new StudentResponseReader(path);
     // Associate students with their friends
-    readStudentResponses.knitStudents();
+    studentResponseReader.knitStudents();
 
-    students = new HashSet<>(readStudentResponses.getStudents());
+    students = new HashSet<>(studentResponseReader.getStudents());
     // Give each student a unique identifier
     addIDs();
   }
