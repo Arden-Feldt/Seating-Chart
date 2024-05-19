@@ -1,6 +1,7 @@
 package src.main;
 
 import src.main.miniZinc.DznWriter;
+import src.main.miniZinc.MiniZincExecutor;
 import src.main.miniZinc.StudentTransformer;
 
 public class Main {
@@ -25,6 +26,9 @@ public class Main {
 
     // Write into datafile
     DznWriter dznWriter = new DznWriter(grade);
+
+    // Execute optimization
+    MiniZincExecutor miniZincExecutor = new MiniZincExecutor(1000);
 
     // cd .\src\main\miniZinc\
     // minizinc --solver gecode --time-limit 10 seatingchart.mzn seatingdata.dzn
