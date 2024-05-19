@@ -2,6 +2,7 @@ package src.main;
 
 import src.main.miniZinc.DznWriter;
 import src.main.miniZinc.MiniZincExecutor;
+import src.main.miniZinc.SolutionParser;
 import src.main.miniZinc.StudentTransformer;
 
 public class Main {
@@ -27,8 +28,12 @@ public class Main {
 
     // Execute optimization
     MiniZincExecutor miniZincExecutor = new MiniZincExecutor(TIMESTOP);
-    miniZincExecutor.execute();
+    String solution = miniZincExecutor.execute();
 
+    // Make Solution Intelligible
+    SolutionParser solutionParser = new SolutionParser(grade, solution);
+    String parsedSolution = solutionParser.parse();
 
+    System.out.println(parsedSolution);
   }
 }
