@@ -13,7 +13,7 @@ public class Grade {
 
     // Remove this after UI implementation
     pathLocator.setPath(
-        "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\googleFormReader\\studentForm");
+        "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\googleFormReader\\studentForm");
 
     String path = pathLocator.getPath();
 

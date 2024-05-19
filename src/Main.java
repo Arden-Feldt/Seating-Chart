@@ -38,6 +38,9 @@ public class Main {
     MiniZincExecutor miniZincExecutor = new MiniZincExecutor(TIMESTOP);
     String solution = miniZincExecutor.execute();
 
+    System.out.println("-=-Solution-=-");
+    System.out.println(solution);
+
     // Make Solution Intelligible
     SolutionParser solutionParser = new SolutionParser(grade, solution);
     String parsedSolution = solutionParser.parse();
