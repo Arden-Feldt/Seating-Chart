@@ -4,20 +4,24 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class MiniZincExecutor {
+    String[] command;
     public MiniZincExecutor(int timestop) {
-
     // Define the command and its arguments
-    String[] command = {
-      "minizinc",
-      "--solver",
-      "gecode",
-      "--time-limit",
-      String.valueOf(timestop),
-      // TODO: Fix this absolute path
-      "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\miniZinc\\seatingchart.mzn",
-      "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\miniZinc\\seatingdata.mzn"
-    };
+        command = new String[]{
+          "minizinc",
+          "--solver",
+          "gecode",
+          "--time-limit",
+          String.valueOf(timestop),
+          // TODO: Fix this absolute path
+          "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\miniZinc\\seatingchart.mzn",
+          "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\miniZinc\\seatingdata.mzn"
+        };
 
+
+    }
+
+    public void execute(){
         try {
             // Create a ProcessBuilder with the command
             ProcessBuilder processBuilder = new ProcessBuilder(command);

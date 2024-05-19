@@ -7,11 +7,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class DznWriter {
-    public DznWriter(Grade grade){
+    String content;
+    String filePath;
+    public DznWriter(Grade grade, String filePath){
         StudentTransformer studentTransformer = new StudentTransformer(grade);
-        String filePath = "src/main/miniZinc/seatingdata.dzn";
-        String content = studentTransformer.toString();
+        this.filePath = filePath;
+        content = studentTransformer.toString();
+    }
 
+    public void write(){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, false))) {
             writer.write(content);
         } catch (IOException e) {

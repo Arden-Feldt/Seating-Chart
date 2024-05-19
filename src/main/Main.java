@@ -25,10 +25,12 @@ public class Main {
     System.out.println(studentTransformer);
 
     // Write into datafile
-    DznWriter dznWriter = new DznWriter(grade);
+    DznWriter dznWriter = new DznWriter(grade, "src/main/miniZinc/seatingdata.dzn");
+    dznWriter.write();
 
     // Execute optimization
     MiniZincExecutor miniZincExecutor = new MiniZincExecutor(1000);
+    miniZincExecutor.execute();
 
     // cd .\src\main\miniZinc\
     // minizinc --solver gecode --time-limit 10 seatingchart.mzn seatingdata.dzn
