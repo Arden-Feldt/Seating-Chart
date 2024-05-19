@@ -15,7 +15,7 @@ public class MiniZincExecutor {
           String.valueOf(timestop),
           // TODO: Fix this absolute path
           "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\miniZinc\\seatingchart.mzn",
-          "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\miniZinc\\seatingdata.mzn"
+          "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\main\\miniZinc\\seatingdata.dzn"
         };
 
 
