@@ -2,6 +2,7 @@ package src;
 
 import java.util.HashSet;
 
+import src.exceptions.StudentNotFoundException;
 import src.googleFormReader.StudentResponseReader;
 import src.googleFormReader.PathLocator;
 
@@ -37,5 +38,17 @@ public class Grade {
 
   public HashSet<Student> getStudents() {
     return students;
+  }
+
+  public Student getStudentByID(int id){
+    if (id > students.size()){
+      throw new IllegalArgumentException("Grade.getStudnetByID: Invalid ID");
+    }
+      for (Student student : students) {
+      if (student.getId() == id){
+        return student;
+      }
+    }
+      throw new StudentNotFoundException();
   }
 }

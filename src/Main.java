@@ -31,7 +31,7 @@ public class Main {
     System.out.println(studentTransformer);
 
     // Write into datafile
-    DznWriter dznWriter = new DznWriter(grade, "src/miniZinc/seatingdata.dzn");
+    DznWriter dznWriter = new DznWriter(grade, "src/miniZinc/seatingdata.dzn", studentTransformer);
     dznWriter.write();
 
     // Execute optimization

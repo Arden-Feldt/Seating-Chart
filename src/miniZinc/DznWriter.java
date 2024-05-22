@@ -7,10 +7,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class DznWriter {
+    Grade grade;
     String content;
     String filePath;
-    public DznWriter(Grade grade, String filePath){
-        StudentTransformer studentTransformer = new StudentTransformer(grade);
+    public DznWriter(Grade grade, String filePath, StudentTransformer studentTransformer){
+        this.grade = grade;
         this.filePath = filePath;
         content = studentTransformer.toString();
     }
