@@ -11,7 +11,7 @@ public class Main {
   public static int TABLENUMBER; // Max number of tables available;
   public static final int FRIENDNUMBER = 3; // DO NOT FUCK WITH - How many friends each student has
   public static int SEATNUMBER; // Number of seats at a table;
-  public static int TIMESTOP = 1000; // Time stop is in milliseconds;
+  public static int TIMESTOP = 10000; // Time stop is in milliseconds;
   // ^ init with function that ramps with students and constraints
 
   public static void main(String[] args) {
@@ -27,22 +27,19 @@ public class Main {
     System.out.println(grade.getStudents());
 
     // Mini Zinc Shit has to go here
-    StudentTransformer studentTransformer = new StudentTransformer(grade);
-    System.out.println(studentTransformer);
+
 
     // Write into datafile
-    DznWriter dznWriter = new DznWriter(grade, "src/miniZinc/seatingdata.dzn", studentTransformer);
+    DznWriter dznWriter = new DznWriter(grade, "src/miniZinc/seatingdata.dzn");
     dznWriter.write();
-
-    // Execute optimization
-    MiniZincExecutor miniZincExecutor = new MiniZincExecutor(TIMESTOP);
-    String solution = miniZincExecutor.execute();
+    // TODO: Why is it not stopping for the timstop?
+    dznWriter.solve();
 
     System.out.println("-=-Solution-=-");
-    System.out.println(solution);
+    System.out.println(dznWriter.getSolution());
 
     // Make Solution Intelligible
-    SolutionParser solutionParser = new SolutionParser(grade, solution);
+    SolutionParser solutionParser = new SolutionParser(grade, dznWriter.getSolution());
     String parsedSolution = solutionParser.parse();
 
     System.out.println(parsedSolution);
