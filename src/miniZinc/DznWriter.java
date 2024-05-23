@@ -6,8 +6,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static src.Main.TIMESTOP;
-
 public class DznWriter {
     private Grade grade;
     private StudentTransformer studentTransformer;
@@ -27,7 +25,7 @@ public class DznWriter {
 
     public void solve(){
         // Execute optimization
-        MiniZincExecutor miniZincExecutor = new MiniZincExecutor(TIMESTOP);
+        MiniZincExecutor miniZincExecutor = new MiniZincExecutor();
         solution = miniZincExecutor.execute();
     }
 

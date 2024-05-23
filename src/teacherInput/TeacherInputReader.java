@@ -1,5 +1,9 @@
 package src.teacherInput;
 
+import static src.Main.SEATNUMBER;
+import static src.Main.TABLENUMBER;
+
+
 public class TeacherInputReader {
     // TODO: Implement this
     // reads who shouldn't get put together
@@ -22,5 +26,10 @@ public class TeacherInputReader {
 
     public int getNumberConstraints(){
         return numConstraints;
+    }
+
+    public void defineStaticVariables(){
+        TABLENUMBER = getTableNumber();
+        SEATNUMBER = getSeatNumber();
     }
 }

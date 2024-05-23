@@ -1,9 +1,7 @@
 package src;
 
 import src.miniZinc.DznWriter;
-import src.miniZinc.MiniZincExecutor;
 import src.miniZinc.SolutionParser;
-import src.miniZinc.StudentTransformer;
 import src.teacherInput.TeacherInputReader;
 
 public class Main {
@@ -17,8 +15,7 @@ public class Main {
   public static void main(String[] args) {
     // Init teacher stuff - maybe put this somewhere else cleaner
     TeacherInputReader teacherInputReader = new TeacherInputReader();
-    TABLENUMBER = teacherInputReader.getTableNumber();
-    SEATNUMBER = teacherInputReader.getSeatNumber();
+    teacherInputReader.defineStaticVariables();
 
     // Make the grade
     Grade grade = new Grade();
@@ -27,12 +24,9 @@ public class Main {
     System.out.println(grade.getStudents());
 
     // Mini Zinc Shit has to go here
-
-
     // Write into datafile
     DznWriter dznWriter = new DznWriter(grade, "src/miniZinc/seatingdata.dzn");
     dznWriter.write();
-    // TODO: Why is it not stopping for the timstop?
     dznWriter.solve();
 
     System.out.println("-=-Solution-=-");
