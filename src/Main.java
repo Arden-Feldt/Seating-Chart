@@ -1,9 +1,7 @@
 package src;
 
-import src.miniZinc.DznWriter;
 import src.miniZinc.MiniZincManager;
-import src.miniZinc.SolutionParser;
-import src.teacherInput.TeacherInputReader;
+import src.googleFormReader.teacherInput.TeacherInputReader;
 
 public class Main {
   public static String DATAPATH = "src/miniZinc/seatingdata.dzn";

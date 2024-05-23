@@ -1,4 +1,4 @@
-package src.googleFormReader;
+package src.googleFormReader.studentInput;
 
 import src.Student;
 

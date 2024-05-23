@@ -3,7 +3,7 @@ package src;
 import java.util.HashSet;
 
 import src.exceptions.StudentNotFoundException;
-import src.googleFormReader.StudentResponseReader;
+import src.googleFormReader.studentInput.StudentResponseReader;
 import src.googleFormReader.PathLocator;
 
 public class Grade {
@@ -13,8 +13,9 @@ public class Grade {
     PathLocator pathLocator = new PathLocator();
 
     // Remove this after UI implementation
+    // TODO: hard coded path
     pathLocator.setPath(
-        "C:\\Users\\ethan\\IdeaProjects\\Seating-Chart\\src\\googleFormReader\\studentForm");
+        "src/googleFormReader/studentInput/studentForm");
 
     String path = pathLocator.getPath();
 

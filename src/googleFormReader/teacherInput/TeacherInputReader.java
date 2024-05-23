@@ -1,4 +1,4 @@
-package src.teacherInput;
+package src.googleFormReader.teacherInput;
 
 import static src.Main.SEATNUMBER;
 import static src.Main.TABLENUMBER;
