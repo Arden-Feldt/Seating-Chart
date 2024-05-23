@@ -1,10 +1,12 @@
 package src;
 
 import src.miniZinc.DznWriter;
+import src.miniZinc.MiniZincManager;
 import src.miniZinc.SolutionParser;
 import src.teacherInput.TeacherInputReader;
 
 public class Main {
+  public static String DATAPATH = "src/miniZinc/seatingdata.dzn";
 
   public static int TABLENUMBER; // Max number of tables available;
   public static final int FRIENDNUMBER = 3; // DO NOT FUCK WITH - How many friends each student has
@@ -24,18 +26,10 @@ public class Main {
     System.out.println(grade.getStudents());
 
     // Mini Zinc Shit has to go here
-    // Write into datafile
-    DznWriter dznWriter = new DznWriter(grade, "src/miniZinc/seatingdata.dzn");
-    dznWriter.write();
-    dznWriter.solve();
-
-    System.out.println("-=-Solution-=-");
-    System.out.println(dznWriter.getSolution());
-
-    // Make Solution Intelligible
-    SolutionParser solutionParser = new SolutionParser(grade, dznWriter.getSolution());
-    String parsedSolution = solutionParser.parse();
-
-    System.out.println(parsedSolution);
+    MiniZincManager miniZincManager = MiniZincManager.MiniZincManager(grade);
+    miniZincManager.transformStudents();
+    miniZincManager.write();
+    miniZincManager.execute();
+    miniZincManager.parse();
   }
 }

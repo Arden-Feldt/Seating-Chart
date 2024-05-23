@@ -6,9 +6,31 @@ import src.Student;
 public class StudentTransformer {
 
   private final Grade grade;
+  private String transformedStudents;
 
   public StudentTransformer(Grade grade) {
     this.grade = grade;
+  }
+
+  public void transform(){
+    int[][] array = friendArray();
+    StringBuilder result = new StringBuilder();
+
+    result.append("n = ").append(grade.getStudents().size()).append(";\n");
+    result.append("friends = array2d(1..").append(grade.getStudents().size()).append(", 1..3, [\n");
+
+    for (int i = 0; i < array.length; i++){
+      for (int j = 0; j < array[i].length; j++){
+        result.append(array[i][j]);
+        if (i != array.length - 1 || j != array[i].length - 1){
+          result.append(", ");
+        }
+      }
+      result.append("\n");
+    }
+    result.append("]);");
+
+    transformedStudents = result.toString();
   }
 
   public int maxId() {
@@ -33,25 +55,10 @@ public class StudentTransformer {
     return result;
   }
 
-  @Override
-  public String toString() {
-    int[][] array = friendArray();
-    StringBuilder result = new StringBuilder();
-
-    result.append("n = ").append(grade.getStudents().size()).append(";\n");
-    result.append("friends = array2d(1..").append(grade.getStudents().size()).append(", 1..3, [\n");
-
-    for (int i = 0; i < array.length; i++){
-      for (int j = 0; j < array[i].length; j++){
-        result.append(array[i][j]);
-        if (i != array.length - 1 || j != array[i].length - 1){
-          result.append(", ");
-        }
-      }
-      result.append("\n");
+  public String getTransformedStudents() {
+    if (transformedStudents == null){
+      transform();
     }
-    result.append("]);");
-
-    return result.toString();
+    return transformedStudents;
   }
 }
